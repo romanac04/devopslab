@@ -1,0 +1,13 @@
+FROM python:3.9
+
+# Set the working directory
+WORKDIR /app
+
+# Install required packages
+RUN pip install kafka-python requests
+
+# Copy the Kafka producer file
+COPY producer.py .
+
+# Set the command to run the producer file
+CMD ["python", "producer.py"]
